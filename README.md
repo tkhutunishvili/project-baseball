@@ -12,5 +12,7 @@ To run Flusk
 2) change mysql password  
 3) chemod +x run.sh  
 4) ./run.sh  
+5) open http://localhost:5000/  
+
 
 
