@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Baseball</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+
+<p>
+Routes</br>
+Same data, what is in Mysql:</br>
+</br>
+http://localhost:5000/bwar_bat_table </br>
+http://localhost:5000/schedule_and_record_table </br>
+http://localhost:5000/team_batting_table </br>
+</br>
+Mysql Data converted to Json:</br>
+http://localhost:5000/samples-schedule-and-record <br>
+http://localhost:5000/samples-team-batting<br>
+http://localhost:5000/samples-bwar-bat/2003 (last parameter: 2003 is input, should be year)
+</p>
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!--  <script src="{{ url_for('static', filename='js/bonus.js') }}"></script> -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>

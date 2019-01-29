@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+<h2>team_batting_table</h2>
+
+<table>
+  <tr>
+    <th>Team</th>
+    <th>Season</th>
+    <th>SB</th>
+  </tr>
+        {% for row in results_team_batting_table %}
+  <tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+  </tr>
+        {% endfor %}
+</table>
+
+</body>
+</html>
+
