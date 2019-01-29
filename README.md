@@ -5,9 +5,9 @@
 1) Run Create_DB_and_Tables.sql in MySQL Workbench.
 2) Run data-clean-import-sql.ipynb in jupyter notebook.
 
-  To run Flusk
-  cd Flusk-app/
-  chemod +x run.sh
-  ./run.sh
+To run Flusk  
+1) cd Flusk-app/  
+2) chemod +x run.sh  
+3) ./run.sh  
 
 
