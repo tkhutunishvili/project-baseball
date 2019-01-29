@@ -17,5 +17,17 @@ CREATE TABLE IF NOT EXISTS team_batting (
     Season INT,
     SB INT
 );
-
+CREATE TABLE IF NOT EXISTS bwar_bat (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name_common VARCHAR(250),
+    player_ID VARCHAR(250),
+    year_ID INT,
+    team_ID VARCHAR(250),
+    salary INT,
+    PA INT,
+    G INT
+);
+  
 show tables;
+
+
