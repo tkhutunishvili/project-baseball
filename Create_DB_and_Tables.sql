@@ -2,11 +2,14 @@ Create database if not exists  baseball_data;
 USE baseball_data;
 
 
-CREATE TABLE IF NOT EXISTS schedule_and_record (
+CREATE TABLE IF NOT EXISTS w (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Team VARCHAR(250),
-    Win INT,
-    Loss INT,
+    year INT,
+    abbr VARCHAR(250),
+    team_name VARCHAR(250),
+    home_base VARCHAR(250),
+    win INT,
+    loss INT,
     lat VARCHAR(250),
     lon VARCHAR(250)
 );
