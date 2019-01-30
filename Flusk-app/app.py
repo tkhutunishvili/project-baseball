@@ -45,13 +45,8 @@ def pitching_info():
     """Return the homepage."""
     return render_template("pitching_info.html")
 
-@app.route("/pitching_info")
-def pitching_info():
-    """Return the homepage."""
-    return render_template("pitching_info.html")
-
 @app.route("/win_loss_results")
-def pitching_info():
+def win_loss_results():
     """Return the homepage."""
     return render_template("win_loss_results.html")
 
