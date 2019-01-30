@@ -12,7 +12,7 @@ pymysql.install_as_MySQLdb()
 # DataBase Setup
 #################################################
 
-db = pymysql.connect("localhost", "root", "Tulix2015$", "baseball_data")
+db = pymysql.connect("localhost", "root", "password", "baseball_data")
 
 #################################################
 # Flask Setup
