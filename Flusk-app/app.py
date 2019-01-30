@@ -12,7 +12,7 @@ pymysql.install_as_MySQLdb()
 # DataBase Setup
 #################################################
 
-db = pymysql.connect("localhost", "root", "yourpassword", "baseball_data")
+db = pymysql.connect("localhost", "root", "Tulix2015$", "baseball_data")
 
 #################################################
 # Flask Setup
@@ -76,8 +76,26 @@ def samplesbwarbat(sample):
         "name_commons": df.name_common.tolist(),
         "Player_IDs": df.player_ID.tolist(),
         "PAs": df.PA.tolist(),
+        "Gs": df.G.tolist(),
     }
     df_list = df.salary.values.tolist()
+    return jsonify(data)
+
+@app.route("/samples-win_loss_results/<sample>")
+def sampleswinloss(sample):
+    """Return `salarys`, `name_commons`,and `year_IDs`."""
+    df = pd.read_sql_query('SELECT * FROM win_loss_results WHERE year=' + sample, db)
+
+    # Filter the data based on the sample number and
+    data = {
+        "abbrs": df.abbr.values.tolist(),
+        "team_names": df.team_name.values.tolist(),
+        "home_bases": df.home_base.tolist(),
+        "wins": df.win.tolist(),
+        "losss": df.loss.tolist(),
+        "lats": df.lat.tolist(),
+        "lons": df.lon.tolist(),
+    }
     return jsonify(data)
 
 # Convert team-batting data in to Json
@@ -89,10 +107,10 @@ def samplesteambatting():
     return jsonify(df_list)
 
 # Convert schedule-and-record data in to Json
-@app.route("/samples-schedule-and-record")
+@app.route("/samples-win_loss_results-old")
 def samplesscheduleandrecord():
     """Return team_batting data info in to Json."""
-    df = pd.read_sql_query('SELECT * FROM schedule_and_record', db)
+    df = pd.read_sql_query('SELECT * FROM win_loss_results', db)
     df_list = df.values.tolist()
     return jsonify(df_list)
 
