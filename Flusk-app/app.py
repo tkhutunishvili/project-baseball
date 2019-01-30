@@ -144,6 +144,17 @@ def namesbwarbat():
     # Return a list of the column namesbwarbat (sample namesbwarbat)
     return jsonify(list(df_year.year_ID))
 
+#return years for win_loss_results data
+@app.route("/years-win_loss_results")
+def yearwinloss():
+    """Return a list of sample namesbwarbat."""
+
+    # Use Pandas to perform the sql query
+    df_year = pd.read_sql_query('SELECT DISTINCT(year) FROM win_loss_results ORDER BY year DESC;', db)
+
+    # Return a list of the column namesbwarbat (sample namesbwarbat)
+    return jsonify(list(df_year.year))
+
 
 if __name__ == "__main__":
     app.run()
