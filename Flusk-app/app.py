@@ -35,6 +35,25 @@ def bwar_bat():
     """Return the homepage."""
     return render_template("bwar_bat.html")
 
+@app.route("/team_batting")
+def team_batting():
+    """Return the homepage."""
+    return render_template("team_batting.html")
+
+@app.route("/pitching_info")
+def pitching_info():
+    """Return the homepage."""
+    return render_template("pitching_info.html")
+
+@app.route("/pitching_info")
+def pitching_info():
+    """Return the homepage."""
+    return render_template("pitching_info.html")
+
+@app.route("/win_loss_results")
+def pitching_info():
+    """Return the homepage."""
+    return render_template("win_loss_results.html")
 
 #bwar_bat_table
 @app.route("/bwar_bat_table")
