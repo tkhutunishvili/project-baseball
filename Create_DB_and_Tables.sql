@@ -2,7 +2,7 @@ Create database if not exists  baseball_data;
 USE baseball_data;
 
 
-CREATE TABLE IF NOT EXISTS w (
+CREATE TABLE IF NOT EXISTS win_loss_results (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     year INT,
     abbr VARCHAR(250),
@@ -31,6 +31,17 @@ CREATE TABLE IF NOT EXISTS bwar_bat (
     G INT
 );
   
+  CREATE TABLE IF NOT EXISTS pitching_info (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Team VARCHAR(250),
+    IP_2016 INT,
+    Wins_2016 INT,
+    IP_2017 INT,
+    Wins_2017 INT,
+    IP_2018 INT,
+    Wins_2018 INT
+);
 show tables;
+
 
 

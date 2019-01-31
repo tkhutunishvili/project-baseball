@@ -1,0 +1,31 @@
+,year,abbr,team_name,home_base,win,loss,lat,lon
+0,2017,LAA,Angels,Los Angeles,36,38,34.05,-118.24
+1,2017,HOU,Astros,Houston,45,33,29.76,-95.37
+2,2017,OAK,Athletics,Oakland,35,35,37.8,-122.27
+3,2017,TOR,BlueJays,Toronto,35,39,43.65,-79.39
+4,2017,ATL,Braves,Atlanta,28,44,33.75,-84.39
+5,2017,MIL,Brewers,Milwaukee,42,38,43.03,-87.92
+6,2017,STL,Cardinals,St. Louis,40,37,38.63,-90.2
+7,2017,CHC,Cubs,Chicago,43,33,41.88,-87.62
+8,2017,ARI,Diamondbacks,Arizona,43,29,-28.39,-49.38
+9,2017,LAD,Dodgers,Los Angeles,47,24,34.05,-118.24
+10,2017,SF,Giants,San Francisco,29,43,37.78,-122.42
+11,2017,CLE,Indians,Cleveland,43,32,41.51,-81.69
+12,2017,SEA,Mariners,Seattle,32,41,47.6,-122.33
+13,2017,MIA,Marlins,Florida,36,36,21.53,-78.23
+14,2017,NYM,Mets,New York,32,44,40.73,-73.99
+15,2017,WSN,Nationals,Washington,38,34,38.9,-77.04
+16,2017,BAL,Orioles,Baltimore,34,35,39.29,-76.61
+17,2017,SD,Padres,San Diego,40,38,32.72,-117.16
+18,2017,PHI,Phillies,Philadelphia,31,42,39.95,-75.16
+19,2017,PIT,Pirates,Pittsburgh,34,37,40.44,-79.99
+20,2017,TEX,Rangers,Texas,37,40,-28.86,151.17
+21,2017,TB,Rays,Tampa,38,39,27.95,-82.46
+22,2017,CIN,Reds,Cincinnati,35,42,39.1,-84.51
+23,2017,BOS,RedSox,Boston,38,33,42.36,-71.06
+24,2017,COL,Rockies,Colorado,41,35,-22.84,-51.97
+25,2017,KCR,Royals,Kansas City,35,38,39.08,-94.56
+26,2017,DET,Tigers,Detroit,29,47,42.35,-83.06
+27,2017,MIN,Twins,Minnesota,36,40,40.66,-122.49
+28,2017,CHW,WhiteSox,Chicago,30,42,41.88,-87.62
+29,2017,NYY,Yankees,New York,46,30,40.73,-73.99
