@@ -50,33 +50,6 @@ def win_loss_results():
     """Return the homepage."""
     return render_template("win_loss_results.html")
 
-#bwar_bat_table
-@app.route("/bwar_bat_table")
-def bwar_bat_table():
-    cursor = db.cursor()
-    sql = "SELECT * FROM bwar_bat"
-    cursor.execute(sql)
-    results_bwar_bat_table = cursor.fetchall()
-    return render_template('bwar_bat_table.html', results_bwar_bat_table=results_bwar_bat_table)
-
-#schedule_and_record_table
-@app.route("/schedule_and_record_table")
-def schedule_and_record_table():
-    cursor = db.cursor()
-    sql = "SELECT * FROM schedule_and_record"
-    cursor.execute(sql)
-    results_schedule_and_record_table = cursor.fetchall()
-    return render_template('schedule_and_record_table.html', results_schedule_and_record_table=results_schedule_and_record_table)
-
-#team_batting_table
-@app.route("/team_batting_table")
-def team_batting_table():
-    cursor = db.cursor()
-    sql = "SELECT * FROM team_batting"
-    cursor.execute(sql)
-    results_team_batting_table = cursor.fetchall()
-    return render_template('team_batting_table.html', results_team_batting_table=results_team_batting_table)
-
 #Convert bwar-bat data in to Json
 @app.route("/samples-bwar-bat/<sample>")
 def samplesbwarbat(sample):
@@ -117,6 +90,14 @@ def sampleswinloss(sample):
 def samplesteambatting():
     """Return team_batting data info in to Json."""
     df = pd.read_sql_query('SELECT * FROM team_batting', db)
+    df_list = df.values.tolist()
+    return jsonify(df_list)
+
+# Convert pitching-info data in to Json
+@app.route("/samples-pitching-info")
+def samplespitchinginfo():
+    """Return pitching_info data info in to Json."""
+    df = pd.read_sql_query('SELECT * FROM pitching_info', db)
     df_list = df.values.tolist()
     return jsonify(df_list)
 
