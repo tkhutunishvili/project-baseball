@@ -40,10 +40,29 @@ def team_batting():
     """Return the homepage."""
     return render_template("team_batting.html")
 
-@app.route("/pitching_info")
-def pitching_info():
+@app.route("/pitching_visual")
+def pitching_visual():
     """Return the homepage."""
     return render_template("pitching_info.html")
+
+@app.route("/pitching_info")
+def pitching_info():
+    """Returns information about starting pitchers"""
+    #query from database
+    df = pd.read_sql_query('SELECT * from pitching_info;', db)
+
+    data = {
+        "Team": df.Team.values.tolist(),
+        "Wins_2016": df.Wins_2016.tolist(),
+        "IP_2016": df.IP_2016.values.tolist(),
+        "Wins_2017": df.Wins_2017.values.tolist(),
+        "IP_2017": df.IP_2017.values.tolist(),
+        "Wins_2018": df.Wins_2018.values.tolist(),
+        "IP_2018": df.IP_2018.tolist(),
+
+    }
+    #jsonify data  - works
+    return jsonify(data)
 
 @app.route("/win_loss_results")
 def win_loss_results():
