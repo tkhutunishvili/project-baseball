@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
 <body>
@@ -30,11 +30,11 @@
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Visualisations
         <span class="caret"></span></a>
       <ul class="dropdown-menu"> -->
-        <li><a href="team_batting.html">Nick</a></li>
-        <li><a href="Bwar_bat.html">Tati</a></li>
-        <li><a href="win_loss_results.html">Janel</a></li>
-        <li><a href="pitching_info.html">London</a></li>
-        <li><a href="data_page.html">Data</a></li>
+        <li><a href="/team_batting">London</a></li>
+        <li><a href="/bwar_bat">Tati</a></li>
+        <li><a href="/win_loss_results">Janel</a></li>
+        <li><a href="/pitching_visual">Nick</a></li>
+        <li><a href="/map">Map</a></li>
       </ul>
     <!--</li>
   </ul>-->
@@ -86,41 +86,5 @@
   
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-<!--- iOS Landing Page Fix
-<section>
-	<div class="landing-text">
-		<h1>BOOTSTRAP</h1>
-		<h3>Learn the basic building blocks.</h3>
-		<a href="#" class="btn btn-default btn-lg">Get Started</a>
-	</div>
-	<div class="home-wrap">
-        <div id="home">
-		</div>
-    </div>
-</section>
--->
-
-<!--- iOS Fixed Image Fix
-<figure>
-	<div class="fixed-wrap">
-        <div id="fixed">
-		</div>
-    </div>
-</figure>
--->
-
-
-
-
 </body>
 </html>
