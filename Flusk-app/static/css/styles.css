@@ -23,7 +23,7 @@
 }
 
 #home{
-	background: url(img/main.jpg) no-repeat center center fixed;
+	background: url(../images/main.jpg) no-repeat center center fixed;
 	display: table;
 	height: 100%;
 	position: relative;

@@ -11,7 +11,8 @@ CREATE TABLE IF NOT EXISTS win_loss_results (
     win INT,
     loss INT,
     lat VARCHAR(250),
-    lon VARCHAR(250)
+    lon VARCHAR(250),
+    performance VARCHAR(250)
 );
 
 CREATE TABLE IF NOT EXISTS team_batting (
@@ -41,7 +42,6 @@ CREATE TABLE IF NOT EXISTS bwar_bat (
     IP_2018 INT,
     Wins_2018 INT
 );
+
 show tables;
-
-
 

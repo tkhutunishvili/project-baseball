@@ -1,31 +1,31 @@
 TeamName,ABBR,HomeBase
-Angels,LAA,Los Angeles
-Astros,HOU,Houston
-Athletics,OAK,Oakland
-BlueJays,TOR,Toronto
-Braves,ATL,Atlanta
-Brewers,MIL,Milwaukee
-Cardinals,STL,St. Louis
-Cubs,CHC,Chicago
-Diamondbacks,ARI,Arizona
-Dodgers,LAD,Los Angeles
-Giants,SF,San Francisco
-Indians,CLE,Cleveland
-Mariners,SEA,Seattle
-Marlins,MIA,Florida
-Mets,NYM,New York
-Nationals,WSN,Washington
-Orioles,BAL,Baltimore
-Padres,SD,San Diego
-Phillies,PHI,Philadelphia
-Pirates,PIT,Pittsburgh
-Rangers,TEX,Texas
-Rays,TB,Tampa
-Reds,CIN,Cincinnati
-RedSox,BOS,Boston
-Rockies,COL,Colorado
-Royals,KCR,Kansas City
-Tigers,DET,Detroit
-Twins,MIN,Minnesota
-WhiteSox,CHW,Chicago
-Yankees,NYY,New York
+Angels,LAA,"Los Angeles,US"
+Astros,HOU,"Houston,US"
+Athletics,OAK,"Oakland,US"
+BlueJays,TOR,"Toronto,CA"
+Braves,ATL,"Atlanta,US"
+Brewers,MIL,"Milwaukee,US"
+Cardinals,STL,"St. Louis,US"
+Cubs,CHC,"Chicago,US"
+Diamondbacks,ARI,"Arizona,US"
+Dodgers,LAD,"Los Angeles,US"
+Giants,SF,"San Francisco,US"
+Indians,CLE,"Cleveland,US"
+Mariners,SEA,"Seattle,US"
+Marlins,MIA,"Florida,US"
+Mets,NYM,"New York,US"
+Nationals,WSN,"Washington,US"
+Orioles,BAL,"Baltimore,US"
+Padres,SD,"San Diego,US"
+Phillies,PHI,"Philadelphia,US"
+Pirates,PIT,"Pittsburgh,US"
+Rangers,TEX,"Texas,US"
+Rays,TB,"Tampa,US"
+Reds,CIN,"Cincinnati,US"
+RedSox,BOS,"Boston,US"
+Rockies,COL,"Colorado,US"
+Royals,KCR,"Kansas City,US"
+Tigers,DET,"Detroit,US"
+Twins,MIN,"Minnesota,US"
+WhiteSox,CHW,"Chicago,US"
+Yankees,NYY,"New York,US"

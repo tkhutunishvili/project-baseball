@@ -12,7 +12,7 @@ pymysql.install_as_MySQLdb()
 # DataBase Setup
 #################################################
 
-db = pymysql.connect("localhost", "root", "pass", "baseball_data")
+db = pymysql.connect("localhost", "root", "password", "baseball_data")
 
 #################################################
 # Flask Setup
@@ -45,10 +45,16 @@ def pitching_visual():
     """Return the homepage."""
     return render_template("pitching_info.html")
 
+@app.route("/map")
+def map_visual():
+    """Return the homepage."""
+    return render_template("map_visual.html")
+
 @app.route("/pitching_info")
 def pitching_info():
     """Returns information about starting pitchers"""
     #query from database
+    db = pymysql.connect("localhost", "root", "password", "baseball_data")
     df = pd.read_sql_query('SELECT * from pitching_info;', db)
 
     data = {
@@ -73,6 +79,7 @@ def win_loss_results():
 @app.route("/samples-bwar-bat/<sample>")
 def samplesbwarbat(sample):
     """Return `salarys`, `name_commons`,and `year_IDs`."""
+    db = pymysql.connect("localhost", "root", "password", "baseball_data")
     df = pd.read_sql_query('SELECT * FROM bwar_bat WHERE year_ID=' + sample + ' ORDER BY salary DESC limit 10;', db)
 
     # Filter the data based on the sample number and
@@ -90,6 +97,7 @@ def samplesbwarbat(sample):
 @app.route("/samples-win_loss_results/<sample>")
 def sampleswinloss(sample):
     """Return `salarys`, `name_commons`,and `year_IDs`."""
+    db = pymysql.connect("localhost", "root", "password", "baseball_data")
     df = pd.read_sql_query('SELECT * FROM win_loss_results WHERE year=' + sample, db)
 
     # Filter the data based on the sample number and
@@ -108,6 +116,7 @@ def sampleswinloss(sample):
 @app.route("/samples-team-batting/<sample>")
 def samplesteambatting(sample):
     """Return team_batting data info in to Json."""
+    db = pymysql.connect("localhost", "root", "password", "baseball_data")
     df = pd.read_sql_query('SELECT * FROM team_batting where Team="' + sample + '"', db)
     data = {
         "Teams": df.Team.values.tolist(),
@@ -120,6 +129,7 @@ def samplesteambatting(sample):
 @app.route("/samples-pitching-info")
 def samplespitchinginfo():
     """Return pitching_info data info in to Json."""
+    db = pymysql.connect("localhost", "root", "password", "baseball_data")
     df = pd.read_sql_query('SELECT * FROM pitching_info', db)
     df_list = df.values.tolist()
     return jsonify(df_list)
@@ -127,6 +137,7 @@ def samplespitchinginfo():
 # Convert schedule-and-record data in to Json
 @app.route("/samples-win_loss_results-old")
 def samplesscheduleandrecord():
+    db = pymysql.connect("localhost", "root", "password", "baseball_data")
     """Return team_batting data info in to Json."""
     df = pd.read_sql_query('SELECT * FROM win_loss_results', db)
     df_list = df.values.tolist()
@@ -136,7 +147,7 @@ def samplesscheduleandrecord():
 @app.route("/years-bwar-bat")
 def namesbwarbat():
     """Return a list of sample namesbwarbat."""
-
+    db = pymysql.connect("localhost", "root", "password", "baseball_data")
     # Use Pandas to perform the sql query
     df_year = pd.read_sql_query('SELECT DISTINCT(year_ID) FROM bwar_bat ORDER BY year_ID DESC;', db)
 
@@ -147,7 +158,7 @@ def namesbwarbat():
 @app.route("/years-win_loss_results")
 def yearwinloss():
     """Return a list of sample namesbwarbat."""
-
+    db = pymysql.connect("localhost", "root", "password", "baseball_data")
     # Use Pandas to perform the sql query
     df_year = pd.read_sql_query('SELECT DISTINCT(year) FROM win_loss_results ORDER BY year DESC;', db)
 
@@ -156,7 +167,7 @@ def yearwinloss():
 @app.route("/team-team_batting")
 def teamteambatting():
     """Return a list of sample teamteambatting."""
-    db = pymysql.connect("localhost", "root", "pass", "baseball_data")
+    db = pymysql.connect("localhost", "root", "password", "baseball_data")
     # Use Pandas to perform the sql query
     df_team = pd.read_sql_query('SELECT DISTINCT(Team) FROM team_batting;', db)
 
