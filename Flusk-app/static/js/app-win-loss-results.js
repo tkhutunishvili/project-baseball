@@ -2,7 +2,7 @@
 function buildCharts(sample) {
 
   // @TODO: Use `d3.json` to fetch the sample data for the plots
-  var url = '/samples-bwar-bat/' + sample;
+  var url = '/samples-win_loss_results/' + sample;
   console.log("Url", url);
     // @TODO: Build a Bubble Chart using the sample data
     d3.json(url).then(function(data) { 
@@ -10,20 +10,18 @@ function buildCharts(sample) {
     // top 10 salary by player,
       
       var trace = [{
-      x: data.salarys,
-      y: data.Gs,
-      text: data.name_commons,
+      x: data.abbr,
+      y: data.wins,
+      text: data.team_names,
       mode: 'markers',
-      marker: {
-        size: data.Gs,
-        color: data.salarys,
-      }
+      name: "Greek",
+      type: "bar"
       }];
       var layout2 = {
-        title: "Bubble Chart",
+        title: "Bar Chart",
         showlegend: false
       };
-      Plotly.newPlot("bubble", trace, layout2);
+      Plotly.newPlot("plot", trace, layout2);
     })
 }
 

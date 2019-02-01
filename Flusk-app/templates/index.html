@@ -1,54 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Baseball</title>
+  <title>Bootstrap Landing Page Website Tutorial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
 
-<p>
-Routes</br>
-<b>Mysql Data converted to Json:</b></br>
-http://localhost:5000/samples-win_loss_results-old <br>
-http://localhost:5000/samples-win_loss_results/2013(last should be year)<br>
-http://localhost:5000/samples-team-batting<br>
-http://localhost:5000/samples-bwar-bat/2003 (last parameter: 2003 is input, should be year)
-<br>
-</br>
-<b>Graphs<b></br>
-http://localhost:5000/bwar_bat
-</p>
 
-</br>
-</br>
-ALL Rotes:</br>
-/bwar_bat</br>
-/team_batting</br>
-/pitching_info</br>
-/win_loss_results</br>
-/samples-bwar-bat/<sample></br>
-/samples-win_loss_results/<sample></br>
-/samples-team-batting</br>
-/samples-pitching-info</br>
-/samples-win_loss_results-old</br>
-/years-bwar-bat</br>
-/years-win_loss_results</br>
+<nav class = "navbar navbar-default navbar-fixed-top" role = "navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+      <span class="sr-only"> Toggle Navigation</span>
+      <span class = "icon-bar"></span>
+      <span class = "icon-bar"></span>
+      <span class = "icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">Baseball</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-collapse-main">
+  <ul class="nav navbar-nav navbar-right">
+   <!-- <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Visualisations
+        <span class="caret"></span></a>
+      <ul class="dropdown-menu"> -->
+        <li><a href="team_batting.html">Nick</a></li>
+        <li><a href="Bwar_bat.html">Tati</a></li>
+        <li><a href="win_loss_results.html">Janel</a></li>
+        <li><a href="pitching_info.html">London</a></li>
+        <li><a href="data_page.html">Data</a></li>
+      </ul>
+    <!--</li>
+  </ul>-->
+  </div>
+</nav>  
+
+<div id="home">
+  <div class="landing-text">
+    <h1>BASEBALL</h1>
+      <p>Who's on First?</p>
+  </div>
+</div>
+
+<div id="visual" class ="offset">
+  <div class="jumbotron">
+  <div class="narrow text-center">
+    <div class="col-12">
+      <h3 class "heading"> Visualisation</h3>
+      <div class "heading-underline"></div>
+    </div>
+
+    <div class=" row text-center">
+      <div class="col-md-3">
+        <div class="feature">
+        <h3>Nick</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="feature">
+        <h3>Tati</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="feature">
+        <h3>Janel</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="feature">
+        <h3>London</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        </div>
+    </div> 
+
+  
+  </div>
+</div>
 
 
 
-  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<!--  <script src="{{ url_for('static', filename='js/bonus.js') }}"></script> -->
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+
+
+
+
+
+
+<!--- iOS Landing Page Fix
+<section>
+	<div class="landing-text">
+		<h1>BOOTSTRAP</h1>
+		<h3>Learn the basic building blocks.</h3>
+		<a href="#" class="btn btn-default btn-lg">Get Started</a>
+	</div>
+	<div class="home-wrap">
+        <div id="home">
+		</div>
+    </div>
+</section>
+-->
+
+<!--- iOS Fixed Image Fix
+<figure>
+	<div class="fixed-wrap">
+        <div id="fixed">
+		</div>
+    </div>
+</figure>
+-->
+
+
+
 
 </body>
-
 </html>
