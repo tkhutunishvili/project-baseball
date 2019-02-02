@@ -1,6 +1,6 @@
 
 # Project Baseball
-  git clone https://github.com/tkhutunishvili/project-baseball.git
+  git clone https://github.com/tkhutunishvili/project-baseball.git  
 cd project-baseball/  
 
 1) Run Create_DB_and_Tables.sql in MySQL Workbench.
