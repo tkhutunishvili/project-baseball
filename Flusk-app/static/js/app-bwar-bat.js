@@ -20,7 +20,7 @@ function buildCharts(sample) {
       }
       }];
       var layout2 = {
-        title: "Bubble Chart",
+        title: "Games vs Salaries",
         showlegend: false
       };
       Plotly.newPlot("bubble", trace, layout2);

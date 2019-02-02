@@ -22,7 +22,7 @@ function buildCharts(sample) {
         }
         }];
         var layout2 = {
-          title: "Bar Chart",
+          title: "Bases Stolen",
           showlegend: false
         };
         Plotly.newPlot("myChart", trace, layout2);
