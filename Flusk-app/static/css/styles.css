@@ -42,11 +42,51 @@
 	color: red;
 
 }
+
+#home .landing-text hr{
+	width: 330px;
+  	margin: auto;
+  	border-width: 5px;
+  	border-color: black;
+
+}
 .landing-text p{
 	font-size: 300%;
 	font-weight: 400;
 	color: black;
 }
 
+/* keyframe animations which will be used to animate the title */
+@keyframes title {
+	from {
+	  opacity: 0;
+	}
+  
+	to {
+	  font-size: 4.5rem;
+	  opacity: 1;
+	}
+  }
+  
+  @keyframes smaller-title {
+	from {
+	  opacity: 0;
+	}
+  
+	to {
+	  font-size: 5.5rem;
+	  opacity: 1;
+	}
+  }
+  
+  @keyframes subtitle {
+	from {
+	  opacity: 0;
+	}
+  
+	to {
+	  opacity: 1;
+	}
+  }
 
 

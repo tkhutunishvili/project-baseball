@@ -1,63 +1,7 @@
-// //Build Chart
-// function buildCharts(sample) {
 
-//   // @TODO: Use `d3.json` to fetch the sample data for the plots
-//   var url = '/samples-win_loss_results/' + sample;
-//   console.log("Url", url);
-//     // @TODO: Build a Bubble Chart using the sample data
-//     d3.json(url).then(function(data) { 
-//         console.log("data", data);
-//     // top 10 salary by player,
-      
-//       var trace = [{
-//       x: data.abbr,
-//       y: data.wins,
-//       text: data.team_names,
-//       mode: 'markers',
-//       name: "Greek",
-//       type: "bar"
-//       }];
-//       var layout2 = {
-//         title: "Bar Chart",
-//         showlegend: false
-//       };
-//       Plotly.newPlot("plot", trace, layout2);
-//     })
-// }
+Plotly.d3.json('/samples-win-loss-results-new', function (err, data) {
 
-// function init() {
-//   // Grab a reference to the dropdown select element
-//   var selector = d3.select("#selDataset");
-
-//   // Use the list of sample years-bwar-bat to populate the select options
-//   d3.json("/years-bwar-bat").then((sampleNames) => {
-//     sampleNames.forEach((sample) => {
-//       selector
-//         .append("option")
-//         .text(sample)
-//         .property("value", sample);
-//     });
-
-//     // Use the first sample from the list to build the initial plots
-//     const firstSample = sampleNames[0];
-//     buildCharts(firstSample);
-// //    buildMetadata(firstSample);
-//   });
-// }
-
-// function optionChanged(newSample) {
-//   // Fetch new data each time a new sample is selected
-//   buildCharts(newSample);
-// //  buildMetadata(newSample);
-// }
-
-// // Initialize the dashboard
-// init();
-
-Plotly.d3.csv('win_loss_results.csv', function (err, data) {
   console.log(data)
-  // Create a lookup table to sort and regroup the columns of data,
-  // first by year, then by continent:
   var lookup = {};
   function getData(year, abbr) {
     var byYear, trace;
@@ -85,9 +29,11 @@ Plotly.d3.csv('win_loss_results.csv', function (err, data) {
     trace.text.push(datum.team_name);
     trace.id.push(datum.team_name);
     trace.x.push(datum.loss);
-    trace.y.push(datum["win/loss"]);
-    trace.marker.size.push(datum["win/loss"]*300000000);
+    trace.y.push(datum.performance);
+    trace.marker.size.push(datum.performance*300000000);
   }
+  console.log(datum.year)
+  console.log(datum.team_name)
   console.log(trace.x)
   console.log(trace.marker.size)
 
@@ -156,7 +102,7 @@ Plotly.d3.csv('win_loss_results.csv', function (err, data) {
 
   var layout = {
     xaxis: {
-      title: 'Number of Wins',
+      title: 'Number of Losses',
       range: [15, 55]
     },
     yaxis: {
@@ -214,7 +160,7 @@ Plotly.d3.csv('win_loss_results.csv', function (err, data) {
   };
 
   // Create the plot:
-  Plotly.plot('myDiv', {
+  Plotly.plot('myDivLoss', {
     data: traces,
     layout: layout,
     frames: frames,

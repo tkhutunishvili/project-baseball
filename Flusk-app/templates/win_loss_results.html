@@ -24,7 +24,7 @@
       <span class = "icon-bar"></span>
       <span class = "icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">Baseball</a>
+    <a class="navbar-brand" href="/">Baseball</a>
   </div>
   <div class="collapse navbar-collapse" id="navbar-collapse-main">
   <ul class="nav navbar-nav navbar-right">
@@ -42,20 +42,26 @@
   </ul>-->
   </div>
 </nav>  
+
 <div class="container-fluid">
       <div class="jumbotron">
         <h1>WIN or LOSS?</h1>
         <p>explore team's performance with interactive dashboards</p>
-        <div class="well">
-          <h5>SELECT:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
     </div>
+</div>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <div id="myDiv"></div>
+      <div id="myDivWin"></div>
+      </div>
+  </div>
+  </div>
+
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="myDivLoss"></div>
       </div>
   </div>
   </div>
@@ -68,15 +74,15 @@
   </div>
   </div>-->
 
-</div>
+
 
 
   <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <!--  <script src="{{ url_for('static', filename='js/bonus.js') }}"></script> -->
-  <script src="{{ url_for('static', filename='js/app-win-loss-results.js') }}"></script>
-
+  <script src="{{ url_for('static', filename='js/app-win-results.js') }}"></script>
+  <!-- <script src="{{ url_for('static', filename='js/app-loss-results.js') }}"></script>-->
 </body>
 
 </html>
