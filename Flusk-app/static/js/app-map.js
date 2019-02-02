@@ -3,6 +3,12 @@
 
 // Add a tile layer (the background map image) to our map
 // We use the addTo method to add objects to our map
+var myMap = L.map("map-id", {
+  center: [39.50, -98.35],
+  zoom: 5,
+  layers: [ satellitemap, layer2013, layer2014, layer2015, layer2016, layer2017, layer2018]
+});
+
 var satellitemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
   maxZoom: 18,
@@ -29,20 +35,16 @@ var overlayMaps = {
     "2018": layer2018
 };
 
-var myMap = L.map("myMap", {
-  center: [39.50, -98.35],
-  zoom: 5,
-  layers: [ satellitemap, layer2013, layer2014, layer2015, layer2016, layer2017, layer2018]
-});
+
 
 L.control.layers(baseMaps, overlayMaps).addTo(myMap);
 
 d3.json("/samples-win_loss_results/2013", function(response) {
-  let arrLat = response.lats;
-  let arrLon = response.lons;
-  let arrWin = response.wins;
-  let arrLoss = response.losss;
-  let arrName = response.abbrs;
+  let arrLat = response.lon;
+  let arrLon = response.lon;
+  let arrWin = response.win;
+  let arrLoss = response.loss;
+  let arrName = response.abbr;
 
   var markers2013 = []
   for (var i = 0; i < arrLat.length; i++) {
@@ -74,11 +76,11 @@ d3.json("/samples-win_loss_results/2013", function(response) {
 });
 
 d3.json("/samples-win_loss_results/2014", function(response) {
-  let arrLat = response.lats;
-  let arrLon = response.lons;
-  let arrWin = response.wins;
-  let arrLoss = response.losss;
-  let arrName = response.abbrs;
+  let arrLat = response.lon;
+  let arrLon = response.lon;
+  let arrWin = response.win;
+  let arrLoss = response.loss;
+  let arrName = response.abbr;
 
   var markers2014 = []
   for (var i = 0; i < arrLat.length; i++) {
@@ -110,11 +112,11 @@ d3.json("/samples-win_loss_results/2014", function(response) {
 });
 
 d3.json("/samples-win_loss_results/2015", function(response) {
-  let arrLat = response.lats;
-  let arrLon = response.lons;
-  let arrWin = response.wins;
-  let arrLoss = response.losss;
-  let arrName = response.abbrs;
+  let arrLat = response.lon;
+  let arrLon = response.lon;
+  let arrWin = response.win;
+  let arrLoss = response.loss;
+  let arrName = response.abbr;
 
   var markers2015 = []
   for (var i = 0; i < arrLat.length; i++) {
@@ -146,11 +148,11 @@ d3.json("/samples-win_loss_results/2015", function(response) {
 });
 
 d3.json("/samples-win_loss_results/2016", function(response) {
-  let arrLat = response.lats;
-  let arrLon = response.lons;
-  let arrWin = response.wins;
-  let arrLoss = response.losss;
-  let arrName = response.abbrs;
+  let arrLat = response.lon;
+  let arrLon = response.lon;
+  let arrWin = response.win;
+  let arrLoss = response.loss;
+  let arrName = response.abbr;
 
   var markers2016 = []
   for (var i = 0; i < arrLat.length; i++) {
@@ -182,11 +184,11 @@ d3.json("/samples-win_loss_results/2016", function(response) {
 });
 
 d3.json("/samples-win_loss_results/2017", function(response) {
-  let arrLat = response.lats;
-  let arrLon = response.lons;
-  let arrWin = response.wins;
-  let arrLoss = response.losss;
-  let arrName = response.abbrs;
+  let arrLat = response.lon;
+  let arrLon = response.lon;
+  let arrWin = response.win;
+  let arrLoss = response.loss;
+  let arrName = response.abbr;
 
   var markers2017 = []
   for (var i = 0; i < arrLat.length; i++) {
@@ -218,11 +220,11 @@ d3.json("/samples-win_loss_results/2017", function(response) {
 });
 
 d3.json("/samples-win_loss_results/2018", function(response) {
-  let arrLat = response.lats;
-  let arrLon = response.lons;
-  let arrWin = response.wins;
-  let arrLoss = response.losss;
-  let arrName = response.abbrs;
+  let arrLat = response.lon;
+  let arrLon = response.lon;
+  let arrWin = response.win;
+  let arrLoss = response.loss;
+  let arrName = response.abbr;
 
   var markers2018 = []
   for (var i = 0; i < arrLat.length; i++) {
