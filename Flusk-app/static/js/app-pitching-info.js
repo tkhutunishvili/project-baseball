@@ -127,7 +127,49 @@ Chart.defaults.global.title.display = true;
           yAxes: [{
             scaleLabel: {
               display: true,
-              labelString: 'Number of Innings Thrown'
+              labelString: '2016: Number of Innings Thrown'
+            },
+              ticks: {
+                  beginAtZero: true
+              }
+          }],
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Team'
+            },
+            barPercentage: 0.75
+          }]
+      },
+  
+  }
+})});
+
+d3.json(url).then(function(bardata){
+  console.log("data",bardata);
+  //
+
+console.log(Chart.defaults.global.title.display)
+Chart.defaults.global.title.display = true;
+  console.log('innings', bardata.IP_2018)
+  var ctx2 = document.getElementById("canvas2").getContext('2d');
+  var myBarChart = new Chart(ctx2, {
+     type: 'bar',
+     labels: "Innings Thrown",
+     data: {
+       labels: bardata.Team,
+       datasets: [{
+         data: bardata.IP_2018,
+         backgroundColor:'green',
+        borderColor: 'white'
+       }]
+     },
+     options: {
+      scales: {
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: '2018: Number of Innings Thrown'
             },
               ticks: {
                   beginAtZero: true
