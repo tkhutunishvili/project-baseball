@@ -135,13 +135,19 @@ def samplespitchinginfo():
     return jsonify(df_list)
 
 # Convert schedule-and-record data in to Json
-@app.route("/samples-win_loss_results-old")
+@app.route("/samples-win-loss-results-new")
 def samplesscheduleandrecord():
-    db = pymysql.connect("localhost", "root", "password", "baseball_data")
     """Return team_batting data info in to Json."""
     df = pd.read_sql_query('SELECT * FROM win_loss_results', db)
-    df_list = df.values.tolist()
-    return jsonify(df_list)
+    result = []
+    cols = df.columns.tolist()
+    for row in df.values.tolist():
+        rowd = dict()
+        for iv,v in enumerate(row):
+            rowd[cols[iv]] = v
+        result.append(rowd)
+
+    return json.dumps(result)
 
 #return years for bwar-bat data
 @app.route("/years-bwar-bat")
