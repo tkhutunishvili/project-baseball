@@ -55,39 +55,92 @@ console.log("Url", url);
 
 
           var layout = {
+            title: {
+              text:'Innings Thrown by Starting Pitchers vs. Team Wins',
+              font: {
+                family: 'Courier New, monospace',
+                size: 30
+              },
             xaxis: {
+              title: {
+                text: 'Number of Innings Thrown by Starting Pitchers',
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 18,
+                  color: '#7f7f7f'
+                }
+              },
               range: [300,1200]
             },
             yaxis: {
+              title: {
+                text: 'Number of Team Wins',
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 18,
+                  color: '#7f7f7f'
+                }
+              },
               range: [40,115]
             },
             legend: {
               y: 0.5,
-              yref: 'paper',
+              yf: 'paper',
               font: {
                 family: 'Arial, sans-serif',
-                size: 20,
+                size: 22,
                 color: 'grey',
               }
-            },
-            title:'Innings Thrown by Starting Pitchers vs Wins'
-          };
+            }
+          }
+        };
         
           Plotly.newPlot('scatter', data, layout)
 
-
-          //trying to get tooltip going 
-
-          myPlot.on('plotly_hover', function(data){
-            var infotext = data.points.map(function(d){
-              return (d.data.Teams+': x= '+d.x+', y= '+d.y.toPrecision(3));
-            });
-        
-            hoverInfo.innerHTML = infotext.join('');
-        })
-         .on('plotly_unhover', function(data){
-            hoverInfo.innerHTML = '';
-        });
-
     });
 
+//Chart.js Bar Chart
+//creating a bar chart for 2016 season
+
+
+d3.json(url).then(function(bardata){
+  console.log("data",bardata);
+  //
+
+console.log(Chart.defaults.global.title.display)
+Chart.defaults.global.title.display = true;
+  console.log('innings', bardata.IP_2016)
+  var ctx = document.getElementById("canvas").getContext('2d');
+  var myBarChart = new Chart(ctx, {
+     type: 'bar',
+     labels: "Innings Thrown",
+     data: {
+       labels: bardata.Team,
+       datasets: [{
+         data: bardata.IP_2016,
+         backgroundColor:'blue',
+        borderColor: 'white'
+       }]
+     },
+     options: {
+      scales: {
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Number of Innings Thrown'
+            },
+              ticks: {
+                  beginAtZero: true
+              }
+          }],
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Team'
+            },
+            barPercentage: 0.75
+          }]
+      },
+  
+  }
+})});
