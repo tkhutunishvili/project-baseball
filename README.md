@@ -9,7 +9,7 @@ cd project-baseball/
 
 To run Flusk  
 1) cd Flusk-app/  
-2) change mysql password in app.py  
+2) change mysql password in app.py(each route has its own DB connection, password needs to be updated for all of them)  
 3) chmod +x run.sh  
 4) ./run.sh  
 5) open http://localhost:5000/  

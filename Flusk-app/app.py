@@ -51,6 +51,7 @@ def map_visual():
     """Return the homepage."""
     return render_template("map_visual.html")
 
+# Convert pitching-info data in to Json
 @app.route("/pitching_info")
 def pitching_info():
     """Returns information about starting pitchers"""
@@ -95,9 +96,9 @@ def samplesbwarbat(sample):
     df_list = df.salary.values.tolist()
     return jsonify(data)
 
+#Convert Win-loss-result data in to Json
 @app.route("/samples-win_loss_results/<sample>")
 def sampleswinloss(sample):
-    """Return `salarys`, `name_commons`,and `year_IDs`."""
     db = pymysql.connect("localhost", "root", "password", "baseball_data")
     df = pd.read_sql_query('SELECT * FROM win_loss_results WHERE year=' + sample, db)
 
@@ -135,11 +136,12 @@ def samplespitchinginfo():
     df_list = df.values.tolist()
     return jsonify(df_list)
 
-# Convert schedule-and-record data in to Json
+# Convert win-loss data in to Json
 @app.route("/samples-win-loss-results-new")
 def samplesscheduleandrecord():
     """Return team_batting data info in to Json."""
     df = pd.read_sql_query('SELECT * FROM win_loss_results', db)
+    #loop for creating key value and convering in to Json
     result = []
     cols = df.columns.tolist()
     for row in df.values.tolist():
@@ -158,7 +160,7 @@ def namesbwarbat():
     # Use Pandas to perform the sql query
     df_year = pd.read_sql_query('SELECT DISTINCT(year_ID) FROM bwar_bat ORDER BY year_ID DESC;', db)
 
-    # Return a list of the column namesbwarbat (sample namesbwarbat)
+    # Return a list of the column year_ID (sample year)
     return jsonify(list(df_year.year_ID))
 
 #return years for win_loss_results data
@@ -169,8 +171,10 @@ def yearwinloss():
     # Use Pandas to perform the sql query
     df_year = pd.read_sql_query('SELECT DISTINCT(year) FROM win_loss_results ORDER BY year DESC;', db)
 
-    # Return a list of the column namesbwarbat (sample namesbwarbat)
+    # Return a list of the column year (sample year)
     return jsonify(list(df_year.year))
+
+# Convert team-batting data in to Json
 @app.route("/team-team_batting")
 def teamteambatting():
     """Return a list of sample teamteambatting."""
